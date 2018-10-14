@@ -39,6 +39,5 @@ img.save("image2.png")
 #EXTRAS
 #print ("Pixel color at X & Y:", pic[x,y])
 #pic[x,y] = (255,0,0)
-#im.save("image2.png")
 #[xy_list.append(pic[x,y]) for v in overflow if v not in xy_list]
 #xy_list.append(pic[x,y])
