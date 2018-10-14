@@ -25,13 +25,16 @@ while (y < height - 1):
 	B.append(b)
 
 for contents in R,G,B:
-	print ((contents),"\n")
+        print ((contents),"\n")
 
 length = len(R+G+B)
 
 print ("Number of entries in list(s):",(length))
-print ("Coords stopped at:",x,",",y)
 print ("Image dimensions:", (im.size))
+print ("Most prominent color in image:",(int(sum(R) / float(len(R)))),(int(sum(G) / float(len(G)))),(int(sum(B) / float(len(B)))))
+
+img = Image.new("RGB", (width, height), color = ((int(sum(R) / float(len(R)))),(int(sum(G) / float(len(G)))),(int(sum(B) / float(len(B))))))
+img.save("image2.png")
 
 #EXTRAS
 #print ("Pixel color at X & Y:", pic[x,y])
