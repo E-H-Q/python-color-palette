@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageDraw
 from collections import Counter
 
 im = Image.open("image.jpg")
@@ -33,12 +33,14 @@ countR = Counter(R).most_common(5)
 countG = Counter(G).most_common(5)
 countB = Counter(B).most_common(5)
 
-print ("Number of entries in list(s):",(length))
+print ("Number of entries in lists:",(length))
 print ("Image dimensions:", (im.size))
 print ("Most prominent colors in image:")
 print ("        R:", countR)
 print ("        G:", countG)
 print ("        B:", countB,"\n")
 
-#img = Image.new("RGB", (width, height), color = (R,G,B)
-#img.save("image2.png")
+img = Image.new("RGB", (width, height))
+rect = ImageDraw.Draw(img)
+rect.rectangle(((0, 0), (width/5, height)), fill = (countR[0][0],countG[0][0],countB[0][0]))
+img.save("image2.png")
