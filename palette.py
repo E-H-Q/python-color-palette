@@ -1,7 +1,12 @@
 from PIL import Image, ImageDraw
 from collections import Counter
 
-im = Image.open("image.jpg")
+path = input("Image to open?: ")
+
+if (path == ""): #opens default image on empty input
+	path = "image.jpg"
+
+im = Image.open(path)
 width, height = im.size
 x = 0
 y = 0
