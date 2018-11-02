@@ -16,14 +16,8 @@ R = []
 G = []
 B = []
 
-while (x < width - 1):
+while (x < width - 1 and y < height - 1):
 	x += 1
-	r, g, b = im.getpixel((x, y))
-	R.append(r)
-	G.append(g)
-	B.append(b)
-
-while (y < height - 1):
 	y += 1
 	r, g, b = im.getpixel((x, y))
 	R.append(r)
