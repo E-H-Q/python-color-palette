@@ -16,13 +16,19 @@ R = []
 G = []
 B = []
 
-while (x < width - 1 and y < height - 1):
+while (x < width - 1):
 	x += 1
-	y += 1
 	r, g, b = im.getpixel((x, y))
 	R.append(r)
 	G.append(g)
 	B.append(b)
+
+if (x == width - 1):
+	x = 0
+	y += 1
+
+if (y == height - 1):
+	x = width - 1
 
 for contents in R,G,B:
         print ((contents),"\n")
